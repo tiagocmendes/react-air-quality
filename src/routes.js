@@ -26,6 +26,7 @@ import Typography from "views/Typography/Typography.js";
 import Continents from "views/Continents/Continents.js";
 import CurrentLocation from "views/CurrentLocation/CurrentLocation.js";
 import Search from "views/Search/Search.js";
+import CacheAnalytics from "views/CacheAnalytics/CacheAnalytics.js";
 
 const dashboardRoutes = [
   {
@@ -51,9 +52,9 @@ const dashboardRoutes = [
   },
   {
     path: "/analytics",
-    name: "Analytics",
+    name: "Cache Analytics",
     icon: Analytics,
-    component: Typography,
+    component: CacheAnalytics,
     layout: "/aqi"
   }
 ];
