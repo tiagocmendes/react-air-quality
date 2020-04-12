@@ -85,7 +85,7 @@ class Countries extends React.Component {
                     country.name,
                     country.continent,
                     <IconButton aria-label="delete">
-                        <EyeIcon onClick={() => this.showDetails(country.name)} style={{ color: "#4caf50" }} fontSize="medium" />
+                        <EyeIcon onClick={() => this.showDetails(country)} style={{ color: "#4caf50" }} fontSize="medium" />
                     </IconButton>
                 ]));
 
@@ -110,7 +110,7 @@ class Countries extends React.Component {
 
 
     render() {
-        if (this.state.selectedCountry !== null) return <CountryDetails country={this.state.selectedCountry} />
+        if (this.state.selectedCountry !== null) return <CountryDetails continent={this.continent} country={this.state.selectedCountry} />
         if (this.state.return) return <Continents />
         return (
             <div>
@@ -119,7 +119,7 @@ class Countries extends React.Component {
                         <h3><IconButton aria-label="back">
                             <ArrowBack onClick={() => this.toggleReturn()} style={{ color: "#4caf50" }} fontSize="medium" />
                         </IconButton>
-                        Countries</h3>
+                        <strong>Countries</strong></h3>
                     </GridItem>
                     {this.state.countries !== null ?
                         <GridItem xs={12} sm={12} md={12}>
