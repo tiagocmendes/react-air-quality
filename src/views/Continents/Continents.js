@@ -75,7 +75,7 @@ class Continents extends React.Component {
             <div>
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={12} style={{ marginTop: "-50px", marginBottom: "20px" }}>
-                        <h3><i className="fas fa-globe-europe"></i> Continents</h3>
+                        <h3><i className="fas fa-globe-europe"></i> <strong>Continents</strong></h3>
                     </GridItem>
                     {this.state.continents !== null ?
                         this.state.continents.map((continent, key) => {
