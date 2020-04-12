@@ -13,6 +13,15 @@ import GridContainer from "components/Grid/GridContainer.js";
 
 class Search extends React.Component {
 
+    constructor() {
+        super();
+        this.search = this.search.bind(this);
+
+    }
+
+    search() {
+        alert("Olá!");
+    }
 
     render() {
         return (
@@ -32,7 +41,7 @@ class Search extends React.Component {
                             />
                         </FormControl>
                     </GridItem>
-                    <GridItem xs={12} sm={12} md={2}><Button color="success" size="large" round><SearchIcon /> Search</Button></GridItem>
+                    <GridItem xs={12} sm={12} md={2}><Button color="info" size="large" round onClick={this.search}> <SearchIcon /> Search</Button></GridItem>
                     <GridItem xs={12} sm={12} md={1}></GridItem>
 
                 </GridContainer>
