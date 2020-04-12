@@ -10,9 +10,9 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
-import Button from "components/CustomButtons/Button.js";
 
 import Continents from "views/Continents/Continents.js";
+import CountryDetails from "views/Continents/CountryDetails.js";
 
 import baseUri from "variables/baseUri.js";
 
@@ -52,13 +52,17 @@ class Countries extends React.Component {
             backgroundColor: "#4caf50"
         },
         picture: {
-            height: "40px", width: "40px", borderRadius: "50%"
+            height: "40px", width: "40px", borderRadius: "50%", border: "0.5px solid #9e9e9e"
         }
     };
 
 
     showDetails(country) {
-        alert(country);
+        this.setState({
+            countries: this.state.countries,
+            selectedCountry: country,
+            return: this.state.return
+        })
     }
 
     componentDidMount() {
@@ -106,6 +110,7 @@ class Countries extends React.Component {
 
 
     render() {
+        if (this.state.selectedCountry !== null) return <CountryDetails country={this.state.selectedCountry} />
         if (this.state.return) return <Continents />
         return (
             <div>
@@ -123,7 +128,7 @@ class Countries extends React.Component {
                                     <GridContainer>
                                         <GridItem xs={12} sm={12} md={9}>
                                             <h4 style={this.classes.cardTitleWhite}><i class="fas fa-flag"></i>  List of countries in {this.continent}</h4>
-                                            <p style={this.classes.cardCategoryWhite}>Manage all patients from your hospital</p>
+                                            <p style={this.classes.cardCategoryWhite}>Click on details to see specific air quality metrics of a country</p>
                                         </GridItem>
 
                                     </GridContainer>
