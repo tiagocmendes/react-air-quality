@@ -22,9 +22,10 @@ import Analytics from '@material-ui/icons/Timeline';
 import SearchIcon from '@material-ui/icons/Search';
 // core components/views for Main layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
-import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
+
+import Continents from "views/Continents/Continents.js";
 
 
 const dashboardRoutes = [
@@ -39,7 +40,7 @@ const dashboardRoutes = [
     path: "/continents",
     name: "Continents",
     icon: Globe,
-    component: UserProfile,
+    component: Continents,
     layout: "/aqi"
   },
   {
