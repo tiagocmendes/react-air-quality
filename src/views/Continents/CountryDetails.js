@@ -88,7 +88,7 @@ class CountryDetails extends React.Component {
                 
                 var table = [];
                 pollutants.forEach(element => table.push([
-                    <i className="fas fa-atom"></i>,
+                    <i className="fas fa-smog"></i>,
                     element[0],
                     element[1].v
                 ]))
@@ -139,17 +139,17 @@ class CountryDetails extends React.Component {
                                     <span><strong>Latitude:</strong> {this.state.airQuality.latitude}</span><br />
                                     <span><strong>Latitude:</strong> {this.state.airQuality.longitude}</span><br />
                                     <span><strong>Primary pollutant:</strong> {this.state.airQuality.primaryPollutant}</span><br />
-                                    <span><strong>Last update:</strong> {this.state.airQuality.time + " @ " + this.state.airQuality.timeZone}</span><br />
+                                    <span><strong>Last update:</strong> {this.state.airQuality.time + " GMT " + this.state.airQuality.timeZone}</span><br />
                                 </CardBody>
                             </Card>
                         </GridItem>
                         : ""}
-
+                    {this.state.airQuality !== null ?
                     <GridItem xs={12} sm={12} md={8}>
                         <Card>
                             <CardHeader style={this.classes.cardHeader}>
                                 <h4 style={this.classes.cardTitleWhite}><i className="fas fa-smog"></i>  Other Pollutants</h4>
-                                <p style={this.classes.cardCategoryWhite}>Concentration of different pollutions in the air</p>
+                                <p style={this.classes.cardCategoryWhite}>Concentration of different pollutants in the air</p>
                             </CardHeader>
                             <CardBody>
                                 <Table
@@ -161,6 +161,7 @@ class CountryDetails extends React.Component {
                         </Card>
 
                     </GridItem>
+                    : "" }
                 </GridContainer>
             </div>
         );
