@@ -26,6 +26,8 @@ import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
 
+import Continents from "views/Continents/Continents.js";
+
 
 const dashboardRoutes = [
   {
@@ -39,7 +41,7 @@ const dashboardRoutes = [
     path: "/continents",
     name: "Continents",
     icon: Globe,
-    component: UserProfile,
+    component: Continents,
     layout: "/aqi"
   },
   {
