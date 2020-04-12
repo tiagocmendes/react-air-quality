@@ -1,12 +1,9 @@
 import React from 'react';
 
-import ArrowBack from '@material-ui/icons/ArrowBackIos';
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import IconButton from '@material-ui/core/IconButton';
 
 import Card from "components/Card/Card.js";
-import CardAvatar from "components/Card/CardAvatar.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import Table from "components/Table/Table.js";
@@ -15,17 +12,15 @@ import Countries from "views/Continents/Countries.js";
 
 import baseUri from "variables/baseUri.js";
 
-class CountryDetails extends React.Component {
+class CurrentLocation extends React.Component {
 
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             airQuality: null,
             pollutants: [],
             return: false
         }
-        this.continent = props.continent;
-        this.country = props.country;
         this.toggleReturn = this.toggleReturn.bind(this);
     }
 
@@ -67,7 +62,7 @@ class CountryDetails extends React.Component {
     }
 
     componentDidMount() {
-        fetch(baseUri.endpoints.regions + "/" + this.country.name, {
+        fetch(baseUri.endpoints.currentLocation, {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
@@ -80,7 +75,7 @@ class CountryDetails extends React.Component {
 
             })
             .then(data => {
-
+                
                 var pollutants = [];
                 pollutants.push(data[0].pollutants);
 
@@ -118,22 +113,14 @@ class CountryDetails extends React.Component {
             <div>
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={12} style={{ marginTop: "-50px", marginBottom: "20px" }}>
-                        <h3><IconButton aria-label="back">
-                            <ArrowBack onClick={() => this.toggleReturn()} style={{ color: "#4caf50" }} fontSize="medium" />
-                        </IconButton>
-                            <strong>Air Quality Details</strong></h3>
+                        <h3><strong>Current IP location</strong></h3>
                     </GridItem>
                     {this.state.airQuality !== null ?
                         <GridItem xs={12} sm={12} md={4} style={{ marginTop: "10px" }}>
                             <Card profile>
-                                <CardAvatar profile>
-                                    <a href="/">
-                                        <img style={{ borderRadius: "50%", height: "100px", width: "100px" }} src={this.country.flag} alt="..." />
-                                    </a>
-                                </CardAvatar>
                                 <CardBody profile>
                                     <div style={this.classes.aqi}>{this.state.airQuality.aqi}</div>
-                                    <h3>{this.country.name}</h3>
+                                    <h3>{this.state.airQuality.name}</h3>
                                     <span><strong>Air Quality Indicator:</strong> {this.state.airQuality.aqi}</span><br />
                                     <span><strong>Station:</strong> {this.state.airQuality.name}</span><br />
                                     <span><strong>Latitude:</strong> {this.state.airQuality.latitude}</span><br />
@@ -169,4 +156,4 @@ class CountryDetails extends React.Component {
 }
 
 
-export default CountryDetails;
+export default CurrentLocation;
