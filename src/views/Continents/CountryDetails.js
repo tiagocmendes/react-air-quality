@@ -41,7 +41,7 @@ class CountryDetails extends React.Component {
             padding: "20px 20px",
             fontSize: "20px",
             fontWeight: "500",
-            marginLeft: "33%"
+            marginLeft: "36%"
         },
         cardCategoryWhite: {
             color: "rgba(255,255,255,.62)",
@@ -124,7 +124,7 @@ class CountryDetails extends React.Component {
                             <strong>Air Quality Details</strong></h3>
                     </GridItem>
                     {this.state.airQuality !== null ?
-                        <GridItem xs={12} sm={12} md={4} style={{ marginTop: "10px" }}>
+                        <GridItem xs={12} sm={12} md={5} style={{ marginTop: "10px" }}>
                             <Card profile>
                                 <CardAvatar profile>
                                     <a href="/">
@@ -145,7 +145,7 @@ class CountryDetails extends React.Component {
                         </GridItem>
                         : ""}
                     {this.state.airQuality !== null ?
-                    <GridItem xs={12} sm={12} md={8}>
+                    <GridItem xs={12} sm={12} md={7}>
                         <Card>
                             <CardHeader style={this.classes.cardHeader}>
                                 <h4 style={this.classes.cardTitleWhite}><i className="fas fa-smog"></i>  Other Pollutants</h4>
