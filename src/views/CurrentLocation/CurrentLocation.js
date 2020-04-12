@@ -36,7 +36,7 @@ class CurrentLocation extends React.Component {
             padding: "20px 20px",
             fontSize: "20px",
             fontWeight: "500",
-            marginLeft: "33%"
+            marginLeft: "36%"
         },
         cardCategoryWhite: {
             color: "rgba(255,255,255,.62)",
@@ -113,10 +113,10 @@ class CurrentLocation extends React.Component {
             <div>
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={12} style={{ marginTop: "-50px", marginBottom: "20px" }}>
-                        <h3><strong>Current IP location</strong></h3>
+                        <h3><i class="fas fa-map-marked-alt"></i> <strong>Current IP location</strong></h3>
                     </GridItem>
                     {this.state.airQuality !== null ?
-                        <GridItem xs={12} sm={12} md={4} style={{ marginTop: "10px" }}>
+                        <GridItem xs={12} sm={12} md={5} style={{ marginTop: "10px" }}>
                             <Card profile>
                                 <CardBody profile>
                                     <div style={this.classes.aqi}>{this.state.airQuality.aqi}</div>
@@ -132,7 +132,7 @@ class CurrentLocation extends React.Component {
                         </GridItem>
                         : ""}
                     {this.state.airQuality !== null ?
-                    <GridItem xs={12} sm={12} md={8}>
+                    <GridItem xs={12} sm={12} md={7}>
                         <Card>
                             <CardHeader style={this.classes.cardHeader}>
                                 <h4 style={this.classes.cardTitleWhite}><i className="fas fa-smog"></i>  Other Pollutants</h4>

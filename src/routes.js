@@ -26,6 +26,7 @@ import Typography from "views/Typography/Typography.js";
 
 import Continents from "views/Continents/Continents.js";
 import CurrentLocation from "views/CurrentLocation/CurrentLocation.js";
+import Search from "views/Search/Search.js";
 
 const dashboardRoutes = [
   {
@@ -43,10 +44,10 @@ const dashboardRoutes = [
     layout: "/aqi"
   },
   {
-    path: "/location",
-    name: "Search Location",
+    path: "/region",
+    name: "Search Region",
     icon: SearchIcon,
-    component: TableList,
+    component: Search,
     layout: "/aqi"
   },
   {
