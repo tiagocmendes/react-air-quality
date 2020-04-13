@@ -46,6 +46,7 @@ class CacheDetails extends React.Component {
 
         this.state = {
             histogram: emailsSubscriptionChart,
+            data: null,
             return: false
         }
         this.toggleReturn = this.toggleReturn.bind(this);
@@ -75,27 +76,9 @@ class CacheDetails extends React.Component {
                 emailsSubscriptionChart.data.series[0] = histogram;
                 this.setState({
                     histogram: emailsSubscriptionChart,
+                    data: data,
                     return: false
                 })
-                /*
-                var pollutants = [];
-                pollutants.push(data[0].pollutants);
-
-                pollutants = Object.entries(pollutants[0]);
-                
-                var table = [];
-                pollutants.forEach(element => table.push([
-                    <i className="fas fa-smog"></i>,
-                    element[0],
-                    element[1].v
-                ]))
-
-                this.setState({
-                    airQuality: data[0],
-                    pollutants: table,
-                    return: this.state.return
-                })
-                */
 
             })
             .catch(error => {
@@ -120,6 +103,7 @@ class CacheDetails extends React.Component {
                         </IconButton>
                             <strong>{this.cacheType} Cache Details</strong></h3>
                     </GridItem>
+                    {this.state.data !== null ? 
                     <GridItem xs={12} sm={12} md={12}>
                         <Card chart>
                             <CardHeader color="success">
@@ -133,16 +117,16 @@ class CacheDetails extends React.Component {
                                 />
                             </CardHeader>
                             <CardBody>
-                                <h4> Subscriptions</h4>
-                                <p>Last Campaign Performance</p>
+                                <h3><strong><i className="fas fa-handshake"></i> Requests:</strong> {this.state.data.requests}</h3>
+                                <h4><strong style={{color: "#5cb360"}}><i className="fas fa-check-square"></i> Hits: </strong> {this.state.data.hits}<br /><strong style={{color: "#f55a4e"}}><i className="fas fa-window-close"></i> Misses:</strong> {this.state.data.misses}</h4>
+                                <h4><strong><i class="fas fa-hourglass-start"></i> Time to live: </strong> {this.state.data.timeToLive} seconds<br /><strong><i className="fas fa-clock"></i> Timer:</strong> {this.state.data.timer} seconds</h4>
                             </CardBody>
                             <CardFooter chart>
-                                <div>
-                                    <AccessTime /> campaign sent 2 days ago
-              </div>
+                                <div><strong><i className="fas fa-history"></i>  Last update:</strong> {new Date(this.state.data.lastRefresh).toString()}</div>
                             </CardFooter>
                         </Card>
                     </GridItem>
+                    : "" }
                 </GridContainer>
             </div>
 
