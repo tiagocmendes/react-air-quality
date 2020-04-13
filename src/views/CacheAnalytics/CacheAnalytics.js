@@ -11,19 +11,28 @@ import cache01 from "assets/img/cache01.png";
 import cache02 from "assets/img/cache02.png";
 import cache03 from "assets/img/cache03.png";
 
+
+import CacheDetails from "views/CacheAnalytics/CacheDetails.js";
+
 class CacheAnalytics extends React.Component {
 
     constructor() {
         super();
+        this.state = {
+            cacheDetails: null
+        }
         this.cacheDetails = this.cacheDetails.bind(this);
     }
 
 
     cacheDetails(cache) {
-        alert(cache);
+        this.setState({
+            cacheDetails: cache
+        })
     }
 
     render() {
+        if(this.state.cacheDetails !== null) return <CacheDetails cacheDetails={this.state.cacheDetails} />
         return (
             <div>
                 <GridContainer>
