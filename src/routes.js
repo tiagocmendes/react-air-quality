@@ -20,12 +20,14 @@ import Location from '@material-ui/icons/LocationOn';
 import Globe from '@material-ui/icons/Public';
 import Analytics from '@material-ui/icons/Timeline';
 import SearchIcon from '@material-ui/icons/Search';
+import SettingsIcon from '@material-ui/icons/Settings';
 // core components/views for Main layout
 
 import Continents from "views/Continents/Continents.js";
 import CurrentLocation from "views/CurrentLocation/CurrentLocation.js";
 import Search from "views/Search/Search.js";
 import CacheAnalytics from "views/CacheAnalytics/CacheAnalytics.js";
+import Project from "views/Project/Project";
 
 const dashboardRoutes = [
   {
@@ -54,6 +56,13 @@ const dashboardRoutes = [
     name: "Cache Analytics",
     icon: Analytics,
     component: CacheAnalytics,
+    layout: "/aqi"
+  },
+  {
+    path: "/project",
+    name: "Project Details",
+    icon: SettingsIcon,
+    component: Project,
     layout: "/aqi"
   }
 ];
