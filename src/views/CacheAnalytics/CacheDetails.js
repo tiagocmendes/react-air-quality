@@ -6,17 +6,13 @@ import ArrowBack from '@material-ui/icons/ArrowBackIos';
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import IconButton from '@material-ui/core/IconButton';
-import AccessTime from "@material-ui/icons/AccessTime";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
-import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
 import {
-    dailySalesChart,
     emailsSubscriptionChart,
-    completedTasksChart
   } from "variables/charts.js";
 
 import CacheAnalytics from "views/CacheAnalytics/CacheAnalytics.js";
@@ -68,7 +64,6 @@ class CacheDetails extends React.Component {
 
             })
             .then(data => {
-                console.log(data);
                 var histogram = [];
                 histogram.push(data.requests);
                 histogram.push(data.hits);
