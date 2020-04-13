@@ -13,6 +13,15 @@ import cache03 from "assets/img/cache03.png";
 
 class CacheAnalytics extends React.Component {
 
+    constructor() {
+        super();
+        this.cacheDetails = this.cacheDetails.bind(this);
+    }
+
+
+    cacheDetails(cache) {
+        alert(cache);
+    }
 
     render() {
         return (
@@ -30,7 +39,7 @@ class CacheAnalytics extends React.Component {
                             </CardAvatar>
                             <CardBody profile>
                                 <h3>Air Quality Cache</h3>
-                                <Button color="success" round>
+                                <Button onClick={() => this.cacheDetails(1)} color="success" round>
                                     Details
                                         </Button>
                             </CardBody>
@@ -45,7 +54,7 @@ class CacheAnalytics extends React.Component {
                             </CardAvatar>
                             <CardBody profile>
                                 <h3>Continents Cache</h3>
-                                <Button color="success" round>
+                                <Button color="success" onClick={() => this.cacheDetails(2)} round>
                                     Details
                                         </Button>
                             </CardBody>
@@ -60,7 +69,7 @@ class CacheAnalytics extends React.Component {
                             </CardAvatar>
                             <CardBody profile>
                                 <h3>Countries Cache</h3>
-                                <Button color="success" round>
+                                <Button color="success" onClick={() => this.cacheDetails(3)} round>
                                     Details
                                         </Button>
                             </CardBody>
