@@ -72,27 +72,18 @@ const dailySalesChart = {
 const emailsSubscriptionChart = {
   data: {
     labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "Mai",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
+      "Requests",
+      "Hits",
+      "Misses",
     ],
-    series: [[542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]]
+    series: [[60, 25, 35]]
   },
   options: {
     axisX: {
       showGrid: false
     },
     low: 0,
-    high: 1000,
+    high: 20,
     chartPadding: {
       top: 0,
       right: 5,
