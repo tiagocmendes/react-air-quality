@@ -8,9 +8,6 @@ import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "components/Card/CardBody.js";
 
 import cache01 from "assets/img/cache01.png";
-import cache02 from "assets/img/cache02.png";
-import cache03 from "assets/img/cache03.png";
-
 
 import CacheDetails from "views/CacheAnalytics/CacheDetails.js";
 
