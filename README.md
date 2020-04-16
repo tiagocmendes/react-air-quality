@@ -1,5 +1,5 @@
 <p align="center">
-    <img style="height: 200px" src="./public/logo.png">
+    <img style="height: 100px" src="./public/logo.png">
 </p>
 
 <h1 align="center">REACT AIR QUALITY</h1>
